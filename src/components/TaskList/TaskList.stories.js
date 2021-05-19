@@ -16,7 +16,7 @@ Default.args = {
   // The data was inherited from the Default story in task.stories.js.
   tasks: [
     { ...TaskStories.Default.args.task, id: '1', title: 'Task Nic' }, // these are props
-    { ...TaskStories.Default.args.task, id: '2', title: 'Task 2' },
+    { ...TaskStories.Default.args.task, id: '2', title: 'Task 2', state: 'TASK_PINNED' },
     { ...TaskStories.Default.args.task, id: '3', title: 'Task 3' },
     { ...TaskStories.Default.args.task, id: '4', title: 'Task 4' },
     { ...TaskStories.Default.args.task, id: '5', title: 'Task 5' },
@@ -29,7 +29,8 @@ WithPinnedTasks.args = {
   // Shaping the stories through args composition.
   // Inherited data coming from the Default story.
   tasks: [
-    ...Default.args.tasks.slice(0, 5),
+    ...Default.args.tasks.slice(0, 4),
+    { id: '5', title: 'Task 5 (pinned)', state: 'TASK_PINNED' },
     { id: '6', title: 'Task 6 (pinned)', state: 'TASK_PINNED' },
   ],
 };
